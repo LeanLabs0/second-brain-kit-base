@@ -1,4 +1,4 @@
-# OS Kit Base
+# Second Brain Kit Base
 
 A starter kit that turns a coding agent (Claude Code, Gemini, Codex) into a personal AI operating system: context files, a connections registry, a standing memory, a decisions log, an LLM-maintained wiki, a projects workbench, and four skills (onboard, audit, os-audit, level-up).
 
