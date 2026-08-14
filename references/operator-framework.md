@@ -216,7 +216,7 @@ Three principles that sit above everything else. When in doubt, return to these.
 
 ## Branch Frameworks (future hooks)
 
-The 3Ms is the mothership. Specific topics go deeper in dedicated frameworks. Most aren't built into this kit yet. They'll grow into `references/` over time:
+The operator framework is the mothership. Specific topics go deeper in dedicated frameworks. Most aren't built into this kit yet. They'll grow into `references/` over time:
 
 - **The Data Retrieval Hierarchy** — Filters, SQL, Full Context, RAG: when to use which
 - **The Integration Ladder** — API, CLI, Browser Automation, Scraping: hierarchy of reliability
@@ -226,7 +226,7 @@ The 3Ms is the mothership. Specific topics go deeper in dedicated frameworks. Mo
 - **The Discovery Playbook** — How to run discovery with a client or team before building
 - **The Security and Permissions Playbook** — Access control, audit trails, risk management
 
-Each plugs into the 3Ms at specific points. Start here, branch out as you need depth.
+Each plugs into the operator framework at specific points. Start here, branch out as you need depth.
 
 ---
 

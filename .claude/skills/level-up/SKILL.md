@@ -1,12 +1,12 @@
 ---
 name: level-up
-description: Use weekly to find and ship one new automation. Walks the 3Ms interview — Mindset (find the candidate) → Method (scope one) → Machine (build it). Trigger on "let's level up", "what should I automate next", "find me leverage this week", or as a Friday ritual. One run = one shipped artifact.
+description: Use weekly to find and ship one new automation. Walks the operator interview — Mindset (find the candidate) → Method (scope one) → Machine (build it). Trigger on "let's level up", "what should I automate next", "find me leverage this week", or as a Friday ritual. One run = one shipped artifact.
 ---
 
 
 ## What this skill does
 
-Walks the user through the 3Ms each week to surface and ship one new automation. **One interview = one artifact.** It also installs the 3Ms framework into the user's head over time — after 4-6 runs, the user starts spotting opportunities mid-week without prompting because the questions have become internal defaults.
+Walks the user through the operator framework each week to surface and ship one new automation. **One interview = one artifact.** It also installs the framework into the user's head over time — after 4-6 runs, the user starts spotting opportunities mid-week without prompting because the questions have become internal defaults.
 
 This is the brain-rewire mechanism. The kit doesn't need cron jobs to anchor behavior; it needs `/level-up` running every Friday.
 

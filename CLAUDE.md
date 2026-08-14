@@ -10,18 +10,42 @@ Read `references/operator-framework.md` once. It's how {{Your Name}} thinks abou
 ## Your skills
 
 - `/onboard` — already run if you're seeing this filled in. Re-run any time to refresh from an edited `aios-intake.md`.
-- `/audit` — Four-Cs gap report. Run on Day 7, then weekly. Watch your score climb.
-- `/level-up` — Weekly 3Ms interview. Find one automation, scope it, ship it. One per week.
+- `/audit` — Four-Cs gap report. Run on Day 7, then weekly. Watch your score climb. Asks "is the AIOS built right?"
+- `/os-audit` — drift, freshness and organization audit. Asks "is the AIOS still true?" Checks that routing points at things that exist, indexes match disk, and no stale claim is sitting where a session will read it as current. Run quarterly or after any big reorganization. Companion to `/audit`, not a replacement.
+- `/level-up` — Weekly operator interview. Find one automation, scope it, ship it. One per week.
 
 ## Where things live
 
 - `context/` — about you, your business, your priorities (filled by `/onboard`)
 - `references/` — frameworks, voice samples, API guides as you connect tools
 - `connections.md` — registry of every system your AIOS can reach
+- `memory/` — standing rules and durable facts, one per file, indexed by `memory/MEMORY.md`. The index is imported below, so it loads every session and is the layer that actually shapes behaviour. Every new memory file MUST get a line in the index or it is invisible. Keep status snapshots out, or mark them frozen with a date.
 - `decisions/log.md` — append-only record of decisions and why
+- `wiki/` — your second brain, an LLM-maintained wiki (LLM Wiki pattern). Any work inside it MUST follow the schema in `wiki/CLAUDE.md` (ingest/query/lint workflows). Triggers: you drop a file in `wiki/raw/`, say "ingest", ask questions about wiki content, or say "lint the wiki".
+- `projects/` — working copies of your actual code repos, client work, and deliverable outputs. Git-ignored by the AIOS (each real repo carries its own `.git` and pushes to its own remote — never track them here). Conventions in `projects/README.md`. Register each ongoing project as a one-liner below this bullet.
+- `audits/` — dated audit reports from `/audit` (Four Cs scores) and `/os-audit` (drift). Gitignored, so this history is machine-local.
 - `archives/` — old stuff. Don't delete. Move here.
 
 See `EXPANSIONS.md` for what to add as you grow.
+
+## Standing memory
+
+@memory/MEMORY.md
+
+## Which file wins
+
+When two files disagree, the more specific and more recently maintained one wins. Never average them, and never quietly pick one. If the conflict is load-bearing, say so out loud.
+
+| Subject | Source of truth | Everything else |
+|---|---|---|
+| Tool status, auth, freshness | `connections.md` | points at it |
+| Who you are, goals, priorities | `context/` | points at it |
+| Standing rules and preferences | `memory/` (indexed in `MEMORY.md`) | a rule not in the index is invisible, so put it there |
+| Facts about people, companies, concepts | `wiki/` pages (via `wiki/index.md`) | pointer plus one-line summary at most |
+| Why something was decided | `decisions/log.md` | append, never rewrite |
+| Wiki conventions | `wiki/CLAUDE.md` | this manual is canonical for everything outside `wiki/` |
+
+A status snapshot is not a source of truth. Anything with a shelf life (counters, "pending", "in progress") gets a date and a pointer to where the live answer lives — never a fresher copy pasted into a file that loads every session. `/os-audit` hunts for violations of this.
 
 ## Knowledge base
 
@@ -43,3 +67,4 @@ Match the register in `references/voice.md`. Casual but professional. Short sent
 - When I make a decision, suggest logging it via the decisions log.
 - When you spot a manual task I'm doing 3+ times, surface it next time `/level-up` runs.
 - Default Shift: when I bring a new task, ask "to what extent could AI be leveraged here?" before assuming I'll do it the old way.
+- Backtrack on misses: if you said something wasn't there and it was, retrace where you searched, explain why you missed it, then propose the routing fix (a line in this manual, an index entry) so it can't happen again. Fixing the route beats apologizing.

@@ -13,9 +13,12 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 | `context/` | About you, your business, your priorities. Filled by `/onboard`. |
 | `references/` | Frameworks, voice samples, API guides, SOPs as you build them. |
 | `decisions/log.md` | Append-only record of what was decided and why. |
+| `memory/` | Standing rules and durable facts, one per file. `MEMORY.md` index is imported into every session; a rule not in the index is invisible. |
+| `wiki/` | Your second brain. LLM-maintained wiki; schema and workflows in `wiki/CLAUDE.md`. |
+| `projects/` | Workbench for real repos and client deliverables. Git-ignored; conventions in `projects/README.md`. |
 | `archives/` | Old files. Don't delete — move here. |
 | `connections.md` | Registry of every system your AIOS can reach. |
-| `.claude/skills/` | Your skills: `/onboard`, `/audit`, `/level-up`. Add more via `/level-up`. |
+| `.claude/skills/` | Your skills: `/onboard`, `/audit`, `/os-audit`, `/level-up`. Add more via `/level-up`. |
 | `aios-intake.md` | Source-of-truth for `/onboard`. Edit and re-run any time. |
 | `CLAUDE.md` | Root operating manual. Filled by `/onboard`. Edit when your role/voice changes. |
 
@@ -25,12 +28,12 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 
 | Folder / file | Add when | Why |
 |---|---|---|
-| `projects/` | You start running 2+ ongoing workstreams that have their own context | Active projects need scoped context separate from the evergreen `context/` files |
 | `templates/` | You catch yourself copy-pasting the same prompts or doc scaffolds | Reusable, parameterized starting points; reduces drift |
 | `brand-assets/` | You generate visual content (carousels, slides, thumbnails, images) | Centralizes logos, palettes, fonts, voice/tone — the AIOS reaches in instead of guessing |
 | `references/sops/` | You document how recurring processes run | Standard operating procedures the AIOS reads to run things consistently |
 | `references/{tool}-api.md` | You connect a new API or MCP and figure out how it works | Researched-once-saved-forever. `/audit` rewards this; future skills don't re-research. |
 | `scripts/` | You write Python or Bash to hit APIs not covered by MCPs | Most people's second connection is a script, not an MCP |
+| Crons via `scripts/setup-*.ps1` (or `.sh`) | A data feed becomes recurring — weekly meeting notes, transcript pulls, exports you keep fetching by hand | Manual-only cadence is how feeds silently freeze (`/os-audit` flags this). Register every scheduled job with a committed setup script so a machine rebuild is one script per job, and the job itself is documented by its own installer |
 | `.claude/agents/` | You need a sub-assistant for repeatable, multi-step research/writing | Agents run on cheaper models in their own context — keep your main session lean |
 | Sub-OS folders (e.g. `youtube-os/`) | You have a vertical with its own data, sheets, transcripts, scripts | Isolation pattern — vertical workflows get their own scoped operating manual + skills |
 
