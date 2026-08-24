@@ -74,6 +74,20 @@ Once the intake is complete, generate these files (or update if re-running). Bac
 5. **`connections.md`**, populate the 7-row table from Q4-Q7 answers. Each row gets `mechanism: not yet connected`, `auth: , `, `last checked: , `. The user wires connections on Day 2.
 6. **`CLAUDE.md`**, fill all `{{...}}` placeholders. Substitute the user's name, stated priority, voice register summary, and a brief connections summary.
 
+### Step 3.4: Make the repo THEIRS (do this before anything ever gets pushed)
+
+This clone came from the shared template. Their personal context must NEVER be pushed there. Set it up properly:
+1. `git remote rename origin upstream` (the template stays reachable for future kit improvements: `git fetch upstream`).
+2. Have them create a PRIVATE repo of their own (github.com, one click); `git remote add origin <their-url>`; push.
+3. The sync script refuses to run while origin still points at the template, but do not rely on the guard: repoint FIRST.
+
+### Step 3.45: Install the refresh routine (so their copy stays current without them thinking about it)
+
+The OS should sync itself: commit their changes, pull the latest, push, loudly abort on conflict. `scripts/sync.ps1` (Windows) / `scripts/sync.sh` does exactly this and refuses to push to the template.
+- Claude Code: add a SessionStart hook that runs the sync script, so every session starts current.
+- Any OS: a scheduled task every 15 minutes (Task Scheduler / cron). Offer to register it now.
+- Solo user on one machine with no remote yet: skip, and say so; the OS still works, it just lives on one machine unbacked (recommend the private repo anyway).
+
 ### Step 3.5: Wire the user's harness (so the OS loads from anywhere)
 
 Ask which AI tool they run, then wire it to load this repo's AGENTS.md at session start even when the session begins in another folder:
@@ -120,10 +134,12 @@ Runs AFTER the personal wizard, never instead of it (skip the personal part only
 1. **Ask for the company website URL** and any extra sources (deck, docs). Record them in the state file.
 2. **Scrape.** Fetch the homepage plus the obvious key pages (about, pricing, solutions/products, case studies) with whatever web tool is available. Save the scraped text to `wiki/raw/<slug>-site-scrape-<date>.md` (immutable raw layer, per wiki/CLAUDE.md). No web tool available: say so and run a pure interview.
 3. **Draft.** Answer every question the scrape supports, each tagged: source URL + confidence (high/medium/low). The question bank is `references/brand-questions/`: facts.md (12), forces.md (17 per persona), frame.md (9), flavor.md (30 archetype questions + enforcement lists). HARD RULE: never invent an answer the scrape cannot support. Stats, customer-result numbers, fears/suspicions/false beliefs, and banned vocabulary are almost never scrapeable: leave them blank for the human.
-4. **Confirm, ONE question at a time,** in bank order (facts L1, L2, L3, then forces per persona, then frame, then flavor):
-   - Drafted: show the draft + "drafted from <url>, confidence <x>. Confirm, edit, or replace?"
-   - Blank: ask fresh, with the bank's help text and example.
-   - Write the result to the state file IMMEDIATELY (status, answer, provenance). Optional questions may be skipped; required ones may not.
+4. **Confirm, ONE question at a time,** in bank order (facts L1, L2, L3, then forces per persona, then frame, then flavor). Presentation is plain interviewer style, never machine style:
+   - Header: "Question N of M, <plain-English label>", numbered within the current section. Never surface field IDs, slugs, "(required)", confidence tags, or state-file internals in chat; those live only in the state file.
+   - Ask the question in plain words. If a draft exists: follow with "From the website I have: <draft>." and close with "Right, or something different?" If blank: ask fresh, with the bank's help text and example.
+   - Name a source URL in chat only when the user asks where an answer came from.
+   - Good: "Question 1 of 12, Brand name. What name does the company go by? From the website I have: Lean Labs. Right, or something different?" Bad: "facts.1, brand_name (required). Draft: Lean Labs. Drafted from <url>, confidence high. Confirm, edit, or replace?"
+   - Write the result to the state file IMMEDIATELY (status, answer, provenance including source URL + confidence). Optional questions may be skipped; required ones may not; if the user tries, say in plain words why it's needed.
    - "Pause" any time; re-running /onboard resumes at current_question.
 5. **Write out.** Confirmed answers land in `companies/<slug>/` (facts.md, forces.md, frame.md, flavor.md), each answer carrying its provenance line. Add the companies/ row to the session's awareness: customer-facing work for this company now starts by reading its facts + flavor.
 6. **Pin the primary brand.** Ask: "Is <company> your primary brand, the one most sessions will work on?" On yes: write the slug into `companies/.pinned` and run `python scripts/compose.py`, which inlines that brand's facts and flavor into the root AGENTS.md between markers. Inlined means physically present in every session, in EVERY harness (Claude, Codex, Gemini, Grok); no import features needed, no reading decision involved. Only ONE brand may be pinned (context budget is real); pinning a new one replaces the old (overwrite .pinned, re-run compose), and the replaced brand stays available through routing and /prime. On no: skip, the routing rule and /prime cover it on demand.
@@ -136,6 +152,8 @@ Runs AFTER the personal wizard, never instead of it (skip the personal part only
 - Voice rejection: type a sample mid-chat. Expected: skill refuses, asks for paste.
 - Fork test: the first question is always personal-vs-company; role never decides the path.
 - Order test: a fresh user answering "company" gets the 7 personal questions FIRST, then the brand interview; an already-onboarded user answering "company" goes straight to the brand interview with a one-line note.
+- Remote test: after install, `git remote -v` shows origin = the user's private repo and upstream = the template; the sync script blocks if origin is the template.
+- Interviewer-style test: a full company run shows zero field IDs or confidence tags in chat.
 - Pin test: answering yes writes companies/.pinned and compose inlines the brand into AGENTS.md; a fresh session then quotes the brand's positioning WITHOUT opening any file (it is already in context). Pinning a second brand replaces the first pin, never stacks.
 - Company cold test on a real site: scrape saved to wiki/raw, all Facts L1 drafted with sources, supporting_data left blank (not invented), one-at-a-time held for the full run.
 - Resume test: kill the session mid-interview; re-run; it greets with the first unconfirmed question, nothing re-asked.

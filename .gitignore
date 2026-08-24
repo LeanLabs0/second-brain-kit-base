@@ -8,3 +8,5 @@ node_modules/
 audits/
 projects/*
 !projects/README.md
+
+.firecrawl/
