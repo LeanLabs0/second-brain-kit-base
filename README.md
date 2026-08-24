@@ -300,6 +300,10 @@ Run /onboard and answer "company" at the fork. Give it the company's website; it
 
 Your AI watches for capture moments: you correct it, you say "we always/never...", a decision gets made, a fact changes. When it spots one, it asks in ONE line whether to save it (a memory rule, a company fact, a decision entry). It never saves silently. Say yes and the rule shapes every future session; say no and it drops it. Before long sessions end, it sweeps once: "anything worth saving?"
 
+### Works in any agent harness
+
+The root manual is AGENTS.md, the open standard read natively by Codex, Gemini (via the committed settings file), Grok, Kimi, and most coding agents; Claude Code reads it through the one-line CLAUDE.md shim. Standing memory and your pinned brand are INLINED into it by scripts/compose.py, so they load everywhere without any import features. Skills live in .agents/skills/ (the shared standard) with mirrors for Claude and command wrappers for Gemini. One repo, any harness.
+
 ### Lesson 6 takeaways
 
 - /prime first, task second. Every session.
