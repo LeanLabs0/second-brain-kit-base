@@ -285,3 +285,23 @@ You can't scale a system you haven't lived in. Once your personal AI OS works, a
 - **Weekly**: run `/level-up`. Find one automation, scope it, ship it. One per week.
 - **Quarterly**: run `/os-audit` to check the OS is still true: routing points at things that exist, indexes match disk, nothing stale reads as current.
 - Read `EXPANSIONS.md` for what to add as you grow, and what not to.
+
+## Lesson 6: Daily rhythm, company brains, and teaching your OS
+
+### Start every session with /prime
+
+Make it a habit: open a session, type /prime, read the one-screen readiness report (what rules are loaded, what changed recently, any watch-outs), THEN give it your task. A primed session starts with your full context instead of rediscovering it mid-task.
+
+### Set up a company brain
+
+Run /onboard and answer "company" at the fork. Give it the company's website; it scrapes the site, drafts the brand interview (facts, ideal customers, frame, voice, from the question bank in references/brand-questions/), and confirms every answer with you one at a time. Confirmed answers land in companies/<slug>/ with a provenance line each. From then on, any customer-facing work for that company starts from its confirmed profile, not from guesses.
+
+### Let the OS learn, with you in the loop
+
+Your AI watches for capture moments: you correct it, you say "we always/never...", a decision gets made, a fact changes. When it spots one, it asks in ONE line whether to save it (a memory rule, a company fact, a decision entry). It never saves silently. Say yes and the rule shapes every future session; say no and it drops it. Before long sessions end, it sweeps once: "anything worth saving?"
+
+### Lesson 6 takeaways
+
+- /prime first, task second. Every session.
+- Company brains are built by confirmation, not dictation: the AI drafts from the website, you approve one answer at a time.
+- The OS only learns what you approve. Every rule in memory/ got a yes from you.

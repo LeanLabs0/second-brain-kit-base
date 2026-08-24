@@ -5,7 +5,7 @@ Append-only record of meaningful decisions and why they were made. `/level-up` P
 **Format per entry:**
 
 ```
-## YYYY-MM-DD — Short title
+## YYYY-MM-DD, Short title
 
 **Decision:** what was decided.
 

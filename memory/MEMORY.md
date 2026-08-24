@@ -2,7 +2,7 @@
 
 One line per memory file. This index is imported into every session via the root `CLAUDE.md`, so it is the layer that actually shapes behaviour. A memory file without a line here is invisible.
 
-Format: `- [Title](file.md) — one-line hook that says when it applies`
+Format: `- [Title](file.md), one-line hook that says when it applies`
 
 ## Rules for this folder
 
@@ -14,4 +14,4 @@ Format: `- [Title](file.md) — one-line hook that says when it applies`
 
 ## Index
 
-(empty — first memory lands here)
+(empty, first memory lands here)

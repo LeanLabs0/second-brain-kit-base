@@ -17,7 +17,7 @@ This framework is for everyone. Business owners hearing about AI for the first t
 
 ---
 
-## Layer 1 — MINDSET (How to Think)
+## Layer 1, MINDSET (How to Think)
 
 Before you touch a single tool, you need to rewire how you approach work. The way you think about tasks determines whether you'll spot automation opportunities or walk past them every day.
 
@@ -47,7 +47,7 @@ One small task per day. Six months later, hundreds automated. Compounding is rea
 
 Never accept AI output without asking why. Ask for three alternatives. Ask which one it thinks is best and why. Push back. Dig in.
 
-This is the antidote to "dark code" — automations or code you don't understand. **If you build something and you can't explain how it works, you've built a liability, not an asset.** When it breaks (and it will), you'll have no idea where to start.
+This is the antidote to "dark code", automations or code you don't understand. **If you build something and you can't explain how it works, you've built a liability, not an asset.** When it breaks (and it will), you'll have no idea where to start.
 
 Treat AI as a mentor, not a vending machine. The vending machine gives you output. The mentor gives you understanding.
 
@@ -59,23 +59,23 @@ Productivity dip at the start: ~20% less output for the first week or two. New w
 
 ---
 
-## Layer 2 — METHOD (How to Decide)
+## Layer 2, METHOD (How to Decide)
 
-Mindset tells you how to think. Method tells you what to do with that thinking. The operational core — turning "I should probably automate something" into "here's exactly what I'm building and why."
+Mindset tells you how to think. Method tells you what to do with that thinking. The operational core, turning "I should probably automate something" into "here's exactly what I'm building and why."
 
 ### 1. Find the Constraint
 
 Two power questions surface everything:
 
-**Q1:** *"If 500 new clients showed up tomorrow, what would break first?"* — finds bottlenecks (clogs in the pipe). Onboarding? Invoicing? Support response times?
+**Q1:** *"If 500 new clients showed up tomorrow, what would break first?"*, finds bottlenecks (clogs in the pipe). Onboarding? Invoicing? Support response times?
 
-**Q2:** *"What would give you 500 more clients tomorrow?"* — finds growth opportunities (untapped pipe). Content you're not creating? Outreach you're not doing? Leads you're not following up on?
+**Q2:** *"What would give you 500 more clients tomorrow?"*, finds growth opportunities (untapped pipe). Content you're not creating? Outreach you're not doing? Leads you're not following up on?
 
 One finds what's broken. The other finds what could scale. Start with the constraint.
 
 ### 2. EAD: Eliminate, Automate, Delegate
 
-For every process, run EAD — in this order.
+For every process, run EAD, in this order.
 
 **Eliminate first.** *"What happens if we just stop doing this?"* You'd be surprised how many processes exist because they always have. Reports nobody reads. Approval steps that add no value. **If nobody would notice it disappeared, kill it. Don't automate waste.**
 
@@ -86,7 +86,7 @@ For every process, run EAD — in this order.
 
 This ratio normalizes expectations. **Full automation is rarely the goal.** If someone promises 100% on anything meaningful, they're selling you something.
 
-**Delegate third.** If a process can't hit 60/30/10 — too complex, too variable, too judgment-dependent — delegate to a person. Not everything should be automated.
+**Delegate third.** If a process can't hit 60/30/10, too complex, too variable, too judgment-dependent, delegate to a person. Not everything should be automated.
 
 The key: nothing stays as-is. Every process gets killed, automated, or handed off.
 
@@ -94,11 +94,11 @@ The key: nothing stays as-is. Every process gets killed, automated, or handed of
 
 Before you touch any tool, write every step on paper. Five elements per process:
 
-- **Trigger** — what kicks it off (form submission, calendar event, email, time of day)
-- **Data Sources** — where information comes from (CRM, spreadsheet, inbox)
-- **Data Transformations** — how data changes shape (reformatting, filtering, combining)
-- **Decision Points** — where it branches (if qualified, do X; if not, do Y)
-- **Destination** — where output goes (back to CRM, email, Slack, document)
+- **Trigger**, what kicks it off (form submission, calendar event, email, time of day)
+- **Data Sources**, where information comes from (CRM, spreadsheet, inbox)
+- **Data Transformations**, how data changes shape (reformatting, filtering, combining)
+- **Decision Points**, where it branches (if qualified, do X; if not, do Y)
+- **Destination**, where output goes (back to CRM, email, Slack, document)
 
 **Rule:** *if you can't explain it to a person, you can't explain it to an AI.* The map forces clarity. Skip this step and you'll build something that sort of works but breaks in weird ways.
 
@@ -126,9 +126,9 @@ If your automation doesn't move a number, why are you building it?
 
 **The Three Buckets** (every business metric falls into one):
 
-1. **Get more customers** — content, prospecting, outreach, ads, lead gen
-2. **Make each customer worth more** — premium services at lower cost, upselling, retention
-3. **Cut costs** — eliminate drudgery, reduce errors, boost productivity
+1. **Get more customers**, content, prospecting, outreach, ads, lead gen
+2. **Make each customer worth more**, premium services at lower cost, upselling, retention
+3. **Cut costs**, eliminate drudgery, reduce errors, boost productivity
 
 **Specific KPIs** are tied to the individual automation: response time, error rate, tickets per month, conversion rate, time-to-completion.
 
@@ -136,7 +136,7 @@ If your automation doesn't improve a metric in one of the three buckets, stop. *
 
 ---
 
-## Layer 3 — MACHINE (How to Build and Operate)
+## Layer 3, MACHINE (How to Build and Operate)
 
 You've got the thinking (Mindset) and the decisions (Method). Now you build and run the thing. Two halves: BUILD and OPERATE.
 
@@ -146,7 +146,7 @@ You've got the thinking (Mindset) and the decisions (Method). Now you build and 
 
 Smallest possible steps. One input, one output per block. Output of block 1 becomes input of block 2.
 
-Start with **zero-AI steps first**. Get the deterministic pieces working — data fetching, formatting, routing. Then layer in AI where actually needed.
+Start with **zero-AI steps first**. Get the deterministic pieces working, data fetching, formatting, routing. Then layer in AI where actually needed.
 
 This makes the project less overwhelming and lets you validate as you go. If block 3 produces garbage, you know exactly where to look. **Modularity is freedom.**
 
@@ -164,7 +164,7 @@ Build step 1. Run it. Confirm output. Build step 2. Run with step 1's actual out
 
 #### 4. The Iteration Mindset
 
-There's no finished product — especially with AI. Deterministic scripts CAN be done (a CSV reformatter, sure). AI steps are always evolving. New models. New capabilities. The prompt that was optimal six months ago is verbose and expensive today.
+There's no finished product, especially with AI. Deterministic scripts CAN be done (a CSV reformatter, sure). AI steps are always evolving. New models. New capabilities. The prompt that was optimal six months ago is verbose and expensive today.
 
 Ship the POC. Get real-usage feedback. Expand. Iterate. **Perfectionism is the enemy of deployment.**
 
@@ -174,12 +174,12 @@ Ship the POC. Get real-usage feedback. Expand. Iterate. **Perfectionism is the e
 
 Roll out in phases, like teaching a kid to ride.
 
-- **Phase 1 — Training wheels.** Run manually. Watch everything. Correct mistakes by hand.
-- **Phase 2 — Guided.** Automation runs but you review every output. It drafts, doesn't send.
-- **Phase 3 — Watched.** Runs autonomously. You monitor. Alerts for anomalies. Periodic batch review.
-- **Phase 4 — Hands-off.** Helmet on, go ride.
+- **Phase 1, Training wheels.** Run manually. Watch everything. Correct mistakes by hand.
+- **Phase 2, Guided.** Automation runs but you review every output. It drafts, doesn't send.
+- **Phase 3, Watched.** Runs autonomously. You monitor. Alerts for anomalies. Periodic batch review.
+- **Phase 4, Hands-off.** Helmet on, go ride.
 
-Even at 90% confidence, roll out 10% of volume first. Watch a week. Add 20% more. Like drug trials — not full dose to everyone day one.
+Even at 90% confidence, roll out 10% of volume first. Watch a week. Add 20% more. Like drug trials, not full dose to everyone day one.
 
 Use confidence thresholds: high → auto-send, medium → draft queue, low → escalate to human. Tighten or loosen as data accumulates.
 
@@ -198,7 +198,7 @@ Treat AI like a brand-new hire on day one.
 
 #### 7. The Kill Switch
 
-Monitor what's running. If an automation consistently needs patches, produces low-quality output, or costs more to maintain than it saves — **tear it down.** Dismantle. Delete.
+Monitor what's running. If an automation consistently needs patches, produces low-quality output, or costs more to maintain than it saves, **tear it down.** Dismantle. Delete.
 
 Don't fall into the sunk cost trap. *"But I spent three weeks building this"* is not a reason to keep something running that doesn't work. **Good operators know when to build AND when to destroy.** The kill switch is just as important as the launch button.
 
@@ -209,7 +209,7 @@ Don't fall into the sunk cost trap. *"But I spent three weeks building this"* is
 Three principles that sit above everything else. When in doubt, return to these.
 
 1. **Boring is beautiful.** Predictable beats clever. Default to the simplest, most deterministic approach that gets the job done.
-2. **Deterministic steps can be finished. AI steps are always evolving.** Set expectations — yours and your client's — accordingly. A rule-based filter is done. An AI classifier needs tuning forever.
+2. **Deterministic steps can be finished. AI steps are always evolving.** Set expectations, yours and your client's, accordingly. A rule-based filter is done. An AI classifier needs tuning forever.
 3. **Fail fast, learn faster.** Get to your first 10 mistakes safely and quickly. Real learning lives there, not in planning, not in your first 10 successes.
 
 ---
@@ -218,13 +218,13 @@ Three principles that sit above everything else. When in doubt, return to these.
 
 The operator framework is the mothership. Specific topics go deeper in dedicated frameworks. Most aren't built into this kit yet. They'll grow into `references/` over time:
 
-- **The Data Retrieval Hierarchy** — Filters, SQL, Full Context, RAG: when to use which
-- **The Integration Ladder** — API, CLI, Browser Automation, Scraping: hierarchy of reliability
-- **The Error Handling Playbook** — What to do when things break (and they will)
-- **The Model Selection Guide** — How to pick the right model for the right job
-- **The Context Engineering Framework** — How to feed AI the right information at the right time
-- **The Discovery Playbook** — How to run discovery with a client or team before building
-- **The Security and Permissions Playbook** — Access control, audit trails, risk management
+- **The Data Retrieval Hierarchy**, Filters, SQL, Full Context, RAG: when to use which
+- **The Integration Ladder**, API, CLI, Browser Automation, Scraping: hierarchy of reliability
+- **The Error Handling Playbook**, What to do when things break (and they will)
+- **The Model Selection Guide**, How to pick the right model for the right job
+- **The Context Engineering Framework**, How to feed AI the right information at the right time
+- **The Discovery Playbook**, How to run discovery with a client or team before building
+- **The Security and Permissions Playbook**, Access control, audit trails, risk management
 
 Each plugs into the operator framework at specific points. Start here, branch out as you need depth.
 

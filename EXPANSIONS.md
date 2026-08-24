@@ -1,6 +1,6 @@
-# EXPANSIONS — what to add as you grow
+# EXPANSIONS, what to add as you grow
 
-The kit ships lean on purpose. Three skills, six folders, one framework reference. That's it. As you use it, you'll outgrow the base — this guide tells you what to add, when, and why.
+The kit ships lean on purpose. Three skills, six folders, one framework reference. That's it. As you use it, you'll outgrow the base, this guide tells you what to add, when, and why.
 
 The AIOS structure should look like a small, well-run business. Not a hoarder's basement.
 
@@ -16,7 +16,7 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 | `memory/` | Standing rules and durable facts, one per file. `MEMORY.md` index is imported into every session; a rule not in the index is invisible. |
 | `wiki/` | Your second brain. LLM-maintained wiki; schema and workflows in `wiki/CLAUDE.md`. |
 | `projects/` | Workbench for real repos and client deliverables. Git-ignored; conventions in `projects/README.md`. |
-| `archives/` | Old files. Don't delete — move here. |
+| `archives/` | Old files. Don't delete, move here. |
 | `connections.md` | Registry of every system your AIOS can reach. |
 | `.claude/skills/` | Your skills: `/onboard`, `/audit`, `/os-audit`, `/level-up`. Add more via `/level-up`. |
 | `aios-intake.md` | Source-of-truth for `/onboard`. Edit and re-run any time. |
@@ -29,13 +29,13 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 | Folder / file | Add when | Why |
 |---|---|---|
 | `templates/` | You catch yourself copy-pasting the same prompts or doc scaffolds | Reusable, parameterized starting points; reduces drift |
-| `brand-assets/` | You generate visual content (carousels, slides, thumbnails, images) | Centralizes logos, palettes, fonts, voice/tone — the AIOS reaches in instead of guessing |
+| `brand-assets/` | You generate visual content (carousels, slides, thumbnails, images) | Centralizes logos, palettes, fonts, voice/tone, the AIOS reaches in instead of guessing |
 | `references/sops/` | You document how recurring processes run | Standard operating procedures the AIOS reads to run things consistently |
 | `references/{tool}-api.md` | You connect a new API or MCP and figure out how it works | Researched-once-saved-forever. `/audit` rewards this; future skills don't re-research. |
 | `scripts/` | You write Python or Bash to hit APIs not covered by MCPs | Most people's second connection is a script, not an MCP |
-| Crons via `scripts/setup-*.ps1` (or `.sh`) | A data feed becomes recurring — weekly meeting notes, transcript pulls, exports you keep fetching by hand | Manual-only cadence is how feeds silently freeze (`/os-audit` flags this). Register every scheduled job with a committed setup script so a machine rebuild is one script per job, and the job itself is documented by its own installer |
-| `.claude/agents/` | You need a sub-assistant for repeatable, multi-step research/writing | Agents run on cheaper models in their own context — keep your main session lean |
-| Sub-OS folders (e.g. `youtube-os/`) | You have a vertical with its own data, sheets, transcripts, scripts | Isolation pattern — vertical workflows get their own scoped operating manual + skills |
+| Crons via `scripts/setup-*.ps1` (or `.sh`) | A data feed becomes recurring, weekly meeting notes, transcript pulls, exports you keep fetching by hand | Manual-only cadence is how feeds silently freeze (`/os-audit` flags this). Register every scheduled job with a committed setup script so a machine rebuild is one script per job, and the job itself is documented by its own installer |
+| `.claude/agents/` | You need a sub-assistant for repeatable, multi-step research/writing | Agents run on cheaper models in their own context, keep your main session lean |
+| Sub-OS folders (e.g. `youtube-os/`) | You have a vertical with its own data, sheets, transcripts, scripts | Isolation pattern, vertical workflows get their own scoped operating manual + skills |
 
 ---
 
@@ -43,12 +43,12 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 
 When each surface gets routinely touched:
 
-- `decisions/log.md` — every meaningful decision (`/level-up` Phase 2 captures these automatically)
-- `archives/` — quarterly cleanup; move stale projects, deprecated skills, old intake versions
-- `references/sops/` — when a process gets re-run by someone new, write the SOP
-- `connections.md` — every time a new tool gets wired in, add a row
-- `references/{tool}-api.md` — same time as `connections.md` update; capture the API once
-- `CLAUDE.md` — quarterly review; rewrite the persona/priorities section after `/level-up` Q90
+- `decisions/log.md`, every meaningful decision (`/level-up` Phase 2 captures these automatically)
+- `archives/`, quarterly cleanup; move stale projects, deprecated skills, old intake versions
+- `references/sops/`, when a process gets re-run by someone new, write the SOP
+- `connections.md`, every time a new tool gets wired in, add a row
+- `references/{tool}-api.md`, same time as `connections.md` update; capture the API once
+- `CLAUDE.md`, quarterly review; rewrite the persona/priorities section after `/level-up` Q90
 
 ---
 
@@ -77,4 +77,4 @@ Two yeses = add. One yes = wait.
 
 ---
 
-> *Your AIOS structure should look like a small, well-run business — not a hoarder's basement. When you can't find something, that's a signal to consolidate, not to add another folder.*
+> *Your AIOS structure should look like a small, well-run business, not a hoarder's basement. When you can't find something, that's a signal to consolidate, not to add another folder.*
