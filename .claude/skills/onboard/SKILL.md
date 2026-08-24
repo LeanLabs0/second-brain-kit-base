@@ -21,8 +21,8 @@ Single combined wizard. Reads or writes `aios-intake.md` (the canonical intake),
 Ask exactly this before anything else: "Is this being set up for you personally, or for a company/team brand?"
 Do not guess from the user's role. A CEO can want a personal setup; anyone can be setting up a company profile.
 
-- Personal: continue with Step 1 below.
-- Company: jump to the COMPANY PATH at the end of this file.
+- Personal: run Steps 1-4 below. Done.
+- Company: BOTH, in order. First the personal wizard (Steps 1-4 below), because the person setting up a company brain still needs their own context, voice, and priorities in the OS. THEN continue into the COMPANY PATH at the end of this file. If aios-intake.md is already filled from a previous run, skip straight to the COMPANY PATH and say so.
 
 ### Step 1: Read the intake
 
@@ -106,7 +106,7 @@ The Default Shift question seeds the Mindset framework before `/level-up` formal
 
 ## COMPANY PATH: the Brand Engine interview
 
-Populates a brand's facts, forces, frame, and flavor from its website plus the human's confirmations. State lives in `brand-intake-<slug>.md` at the repo root (create from `brand-intake-TEMPLATE.md`); resumable at the first unconfirmed question. One question per message, always.
+Runs AFTER the personal wizard, never instead of it (skip the personal part only when aios-intake.md is already filled). Populates a brand's facts, forces, frame, and flavor from its website plus the human's confirmations. State lives in `brand-intake-<slug>.md` at the repo root (create from `brand-intake-TEMPLATE.md`); resumable at the first unconfirmed question. One question per message, always.
 
 1. **Ask for the company website URL** and any extra sources (deck, docs). Record them in the state file.
 2. **Scrape.** Fetch the homepage plus the obvious key pages (about, pricing, solutions/products, case studies) with whatever web tool is available. Save the scraped text to `wiki/raw/<slug>-site-scrape-<date>.md` (immutable raw layer, per wiki/CLAUDE.md). No web tool available: say so and run a pure interview.
@@ -125,6 +125,7 @@ Populates a brand's facts, forces, frame, and flavor from its website plus the h
 - Idempotency: re-run `/onboard` with one Q3 priority changed. Expected: only `context/priorities.md` and `CLAUDE.md`'s priority section update; backup created in `archives/intake-{ts}/`.
 - Voice rejection: type a sample mid-chat. Expected: skill refuses, asks for paste.
 - Fork test: the first question is always personal-vs-company; role never decides the path.
+- Order test: a fresh user answering "company" gets the 7 personal questions FIRST, then the brand interview; an already-onboarded user answering "company" goes straight to the brand interview with a one-line note.
 - Company cold test on a real site: scrape saved to wiki/raw, all Facts L1 drafted with sources, supporting_data left blank (not invented), one-at-a-time held for the full run.
 - Resume test: kill the session mid-interview; re-run; it greets with the first unconfirmed question, nothing re-asked.
 - Refusal test: user says "just fill it all in yourself": refuse to mark anything confirmed without per-question human confirmation; offer to keep everything as drafts instead.
