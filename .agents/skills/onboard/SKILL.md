@@ -74,6 +74,15 @@ Once the intake is complete, generate these files (or update if re-running). Bac
 5. **`connections.md`**, populate the 7-row table from Q4-Q7 answers. Each row gets `mechanism: not yet connected`, `auth: , `, `last checked: , `. The user wires connections on Day 2.
 6. **`CLAUDE.md`**, fill all `{{...}}` placeholders. Substitute the user's name, stated priority, voice register summary, and a brief connections summary.
 
+### Step 3.5: Wire the user's harness (so the OS loads from anywhere)
+
+Ask which AI tool they run, then wire it to load this repo's AGENTS.md at session start even when the session begins in another folder:
+- Claude Code: add `@<absolute path>/AGENTS.md` to the user-level `~/.claude/CLAUDE.md`.
+- Codex: add a pointer block to `~/.codex/AGENTS.md` referencing this repo's AGENTS.md by absolute path.
+- Gemini: the committed `.gemini/settings.json` covers sessions inside the repo; for sessions started elsewhere, add the read instruction to `~/.gemini/GEMINI.md`.
+- Anything else that reads AGENTS.md (Grok, Kimi): sessions inside the repo work with zero setup.
+Verify: a fresh session in their normal working folder must answer from this file's content without opening it.
+
 ### Step 4: The closing screen
 
 Print one screen. Three lines max:
