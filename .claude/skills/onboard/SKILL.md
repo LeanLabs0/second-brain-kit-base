@@ -117,7 +117,16 @@ Runs AFTER the personal wizard, never instead of it (skip the personal part only
    - Write the result to the state file IMMEDIATELY (status, answer, provenance). Optional questions may be skipped; required ones may not.
    - "Pause" any time; re-running /onboard resumes at current_question.
 5. **Write out.** Confirmed answers land in `companies/<slug>/` (facts.md, forces.md, frame.md, flavor.md), each answer carrying its provenance line. Add the companies/ row to the session's awareness: customer-facing work for this company now starts by reading its facts + flavor.
-6. **Closing wow:** "ask me: draft a LinkedIn post for <company>." The post must obey the freshly confirmed flavor (archetype, never-words). Violations mean the flavor section is wrong; fix before declaring done.
+6. **Pin the primary brand.** Ask: "Is <company> your primary brand, the one most sessions will work on?" On yes, add these two lines to the root CLAUDE.md, right under the "Standing memory" import:
+
+   ```
+   ## Primary brand (always loaded)
+   @companies/<slug>/facts.md
+   @companies/<slug>/flavor.md
+   ```
+
+   Pinned means physically injected into every session; the agent never has to decide to look. Only ONE brand may be pinned (context budget is real); pinning a new one replaces the old pin, and the replaced brand stays available through routing and /prime. On no: skip, the routing rule and /prime cover it on demand.
+7. **Closing wow:** "ask me: draft a LinkedIn post for <company>." The post must obey the freshly confirmed flavor (archetype, never-words). Violations mean the flavor section is wrong; fix before declaring done.
 
 ## Verification (for the implementer)
 
@@ -126,6 +135,7 @@ Runs AFTER the personal wizard, never instead of it (skip the personal part only
 - Voice rejection: type a sample mid-chat. Expected: skill refuses, asks for paste.
 - Fork test: the first question is always personal-vs-company; role never decides the path.
 - Order test: a fresh user answering "company" gets the 7 personal questions FIRST, then the brand interview; an already-onboarded user answering "company" goes straight to the brand interview with a one-line note.
+- Pin test: answering yes to primary-brand adds exactly two @import lines to CLAUDE.md; a fresh session then quotes the brand's positioning WITHOUT opening any file (it is already in context). Pinning a second brand replaces the first pin, never stacks.
 - Company cold test on a real site: scrape saved to wiki/raw, all Facts L1 drafted with sources, supporting_data left blank (not invented), one-at-a-time held for the full run.
 - Resume test: kill the session mid-interview; re-run; it greets with the first unconfirmed question, nothing re-asked.
 - Refusal test: user says "just fill it all in yourself": refuse to mark anything confirmed without per-question human confirmation; offer to keep everything as drafts instead.

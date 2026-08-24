@@ -18,7 +18,7 @@ Read `references/operator-framework.md` once. It's how {{Your Name}} thinks abou
 ## Where things live
 
 - `context/`, about you, your business, your priorities (filled by `/onboard`)
-- `companies/`, one folder per brand: facts, forces, frame, flavor, filled by the company path of `/onboard` (question bank in `references/brand-questions/`, per-answer provenance). Before producing anything customer-facing for a company, read its `facts.md` and `flavor.md` first. Always.
+- `companies/`, one folder per brand: facts, forces, frame, flavor, filled by the company path of `/onboard` (question bank in `references/brand-questions/`, per-answer provenance). Before producing anything customer-facing for a company, read its `facts.md` and `flavor.md` first. Always. Your PRIMARY brand can be pinned by /onboard (two @import lines below the Standing memory section) so it loads into every session automatically; secondary brands load on demand.
 - `references/`, frameworks, voice samples, API guides as you connect tools
 - `connections.md`, registry of every system your AIOS can reach
 - `memory/`, standing rules and durable facts, one per file, indexed by `memory/MEMORY.md`. The index is imported below, so it loads every session and is the layer that actually shapes behaviour. Every new memory file MUST get a line in the index or it is invisible. Keep status snapshots out, or mark them frozen with a date.
